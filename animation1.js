@@ -10,3 +10,27 @@ document.addEventListener('scroll',function(){
         }
     }
     });
+    // animation2↓
+    const textAnimation = document.querySelectorAll('.textAnimation');
+    for (let i = 0; i < textAnimation.length; i++) {
+        const targetAnimation = textAnimation[i],
+        texts = targetAnimation.textContent,
+        // 空の配列を作る
+        textsArray = [];
+
+        targetAnimation.textContent = '';
+
+        for (let j = 0; j < texts.split('').length; j++) {
+            const ts = texts.split('')[j]; 
+            // textArrayに下の配列を入れる
+            if(ts === ' '){
+                textsArray.push(' ');
+            }else{
+                textsArray.push('<span><span style="animation-delay: ' + ((j * .05) + .3) + 's;">' + ts + '</span></span>')
+            }
+        }
+        for (let k = 0; k < textsArray.length; k++) {
+            // HTMLにtextArrayを入れる
+            targetAnimation.innerHTML += textsArray[k];
+        }
+    }
