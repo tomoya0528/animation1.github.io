@@ -1,5 +1,19 @@
    'use strict';
-const target = document.querySelectorAll('.animationTarget');
+// animation3
+
+    // 先に実行したい処理…ローディングのアニメーションをここに入れる
+    function loaded(){
+        document.getElementById('loading').classList.remove('active');
+    }
+    
+    // window.addEventListener('load', function(){
+    //     setTimeout(loaded, 500)
+    // })
+    
+    setTimeout(loaded, 500)
+
+    // 後に実行したい処理…メインのwebページのアニメーションの為の処理を入れる
+    const target = document.querySelectorAll('.animationTarget');
 console.log('画面の高さ', window.innerHeight);
 document.addEventListener('scroll',function(){
     for(let i = 0;i <target.length; i++){
@@ -34,3 +48,82 @@ document.addEventListener('scroll',function(){
             targetAnimation.innerHTML += textsArray[k];
         }
     }
+    const swiper1 = new Swiper('.slider1', {
+        // Optional parameters
+        // direction: 'vertical',
+        
+        slidesPerView: 1,
+          centeredSlides: true,
+        speed:1000,
+        loop: true,
+      
+        autoplay:{
+            delay: 2500
+        },
+        
+        breakpoints: {
+            769: {
+                slidesPerView: 2,
+            }
+        },
+
+        // スライダー下の丸いアイコン
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        },
+      
+        // 端の矢印
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+
+        on: {
+            init: function(){
+                const self = this;
+                setTimeout(function(){
+                    const slideElements = this.slides;
+                    for(let i = 0; i = slideElements.length; i++){
+                        slideElements[i].style.transition = '.5s'
+                    }
+
+                }, 10)
+            }
+        }
+      
+        // And if we need scrollbar
+        // scrollbar: {
+        //   el: '.swiper-scrollbar',
+        // },
+      });
+      const swiper2 = new Swiper('.slider2',{
+          
+          effect:'fade',
+          
+        speed:1000,
+        loop: true,
+      
+        autoplay:{
+            delay: 2500
+        },
+        
+        // スライダー下の丸いアイコン
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        },
+      
+        // 端の矢印
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+       
+
+      });
+ 
+
+// animation1
+   
+    
