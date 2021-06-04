@@ -449,6 +449,8 @@ main .contents li.show img{
     .contents li:not(:first-of-type){
         margin-top: 70px;
     }
+    .button-picture{
+        margin-bottom: 100px;
     .button{
         display: none;
     }
