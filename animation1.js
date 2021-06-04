@@ -2,15 +2,21 @@
 // animation3
 
     // 先に実行したい処理…ローディングのアニメーションをここに入れる
-    function loaded(){
+    // function loaded(){
+    //     document.getElementById('loading').classList.remove('active');
+    // }
+    
+    // // window.addEventListener('load', function(){
+    // //     setTimeout(loaded, 500)
+    // // })
+    
+    // setTimeout(loaded, 500)
+    
+
+    $(window).load(function(){
         document.getElementById('loading').classList.remove('active');
-    }
+    });
     
-    // window.addEventListener('load', function(){
-    //     setTimeout(loaded, 500)
-    // })
-    
-    setTimeout(loaded, 500)
 
     // 後に実行したい処理…メインのwebページのアニメーションの為の処理を入れる
     const target = document.querySelectorAll('.animationTarget');
@@ -122,8 +128,14 @@ document.addEventListener('scroll',function(){
        
 
       });
- 
+const showElements = document.querySelectorAll(".animation-target2");
+window.addEventListener("scroll", function(){
+    for (let i = 0; i < showElements.length; i++){
+        const distance = showElements[i].
+        getBoundingClientRect().top + showElements[i].clientHeight * 0.6
+        if(window.innerHeight > distance){
+            showElements[i].classList.add('show');
+        }     
+    }
+})
 
-// animation1
-   
-    
