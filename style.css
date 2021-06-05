@@ -269,13 +269,6 @@ header{
     justify-content: center;
     margin:200px auto 50px auto;
 }
-.text h1{
-    opacity: 0;
-}
-.text.show h1{
-    opacity: 1;
-    transform: none;
-}
 .textAnimation{
     font-family:'Dosis', sans-serif;
     font-size: 40px;
@@ -658,7 +651,7 @@ main .contents li.show img{
         padding: 0;
     }
     .text{
-        margin: 50px auto 100px auto;
+        margin: 0px auto 100px auto;
     }
     .textAnimation:nth-of-type(even) {
         margin-top: 10px;
