@@ -24,6 +24,7 @@ document.getElementById("menuButton").addEventListener("click", function(){
     this.classList.toggle("active");
     document.getElementById("menu02").classList.toggle("active");
 })
+
     const target = document.querySelectorAll('.animationTarget');
 console.log('画面の高さ', window.innerHeight);
 document.addEventListener('scroll',function(){
@@ -32,6 +33,9 @@ document.addEventListener('scroll',function(){
         getBoundingClientRect().top + target[i].clientHeight * 0.6
         if(window.innerHeight > distance){
             target[i].classList.add('show');
+        }
+}})
+
             const textAnimation = document.querySelectorAll('.textAnimation');
             for (let i = 0; i < textAnimation.length; i++) {
                 const targetAnimation = textAnimation[i],
@@ -55,9 +59,8 @@ document.addEventListener('scroll',function(){
                     targetAnimation.innerHTML += textsArray[k];
                 }
         }
-    }
-    }
-});
+    
+
     // animation2↓
     const swiper1 = new Swiper('.slider1', {
         // Optional parameters
