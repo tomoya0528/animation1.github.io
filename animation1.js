@@ -19,6 +19,11 @@
     
 
     // 後に実行したい処理…メインのwebページのアニメーションの為の処理を入れる
+document.addEventListener('DOMContentLoaded',function(){
+document.getElementById("menuButton").addEventListener("click", function(){
+    this.classList.toggle("active");
+    document.getElementById("menu02").classList.toggle("active");
+})
     const target = document.querySelectorAll('.animationTarget');
 console.log('画面の高さ', window.innerHeight);
 document.addEventListener('scroll',function(){
@@ -27,33 +32,33 @@ document.addEventListener('scroll',function(){
         getBoundingClientRect().top + target[i].clientHeight * 0.6
         if(window.innerHeight > distance){
             target[i].classList.add('show');
+            const textAnimation = document.querySelectorAll('.textAnimation');
+            for (let i = 0; i < textAnimation.length; i++) {
+                const targetAnimation = textAnimation[i],
+                texts = targetAnimation.textContent,
+                // 空の配列を作る
+                textsArray = [];
+        
+                targetAnimation.textContent = '';
+        
+                for (let j = 0; j < texts.split('').length; j++) {
+                    const ts = texts.split('')[j]; 
+                    // textArrayに下の配列を入れる
+                    if(ts === ' '){
+                        textsArray.push(' ');
+                    }else{
+                        textsArray.push('<span><span style="animation-delay: ' + ((j * .05) + .3) + 's;">' + ts + '</span></span>')
+                    }
+                }
+                for (let k = 0; k < textsArray.length; k++) {
+                    // HTMLにtextArrayを入れる
+                    targetAnimation.innerHTML += textsArray[k];
+                }
         }
     }
-    });
+    }
+});
     // animation2↓
-    const textAnimation = document.querySelectorAll('.textAnimation');
-    for (let i = 0; i < textAnimation.length; i++) {
-        const targetAnimation = textAnimation[i],
-        texts = targetAnimation.textContent,
-        // 空の配列を作る
-        textsArray = [];
-
-        targetAnimation.textContent = '';
-
-        for (let j = 0; j < texts.split('').length; j++) {
-            const ts = texts.split('')[j]; 
-            // textArrayに下の配列を入れる
-            if(ts === ' '){
-                textsArray.push(' ');
-            }else{
-                textsArray.push('<span><span style="animation-delay: ' + ((j * .05) + .3) + 's;">' + ts + '</span></span>')
-            }
-        }
-        for (let k = 0; k < textsArray.length; k++) {
-            // HTMLにtextArrayを入れる
-            targetAnimation.innerHTML += textsArray[k];
-        }
-    }
     const swiper1 = new Swiper('.slider1', {
         // Optional parameters
         // direction: 'vertical',
@@ -90,7 +95,7 @@ document.addEventListener('scroll',function(){
                 const self = this;
                 setTimeout(function(){
                     const slideElements = this.slides;
-                    for(let i = 0; i = slideElements.length; i++){
+                    for(let i = 0; i < slideElements.length; i++) {
                         slideElements[i].style.transition = '.5s'
                     }
 
@@ -138,4 +143,7 @@ window.addEventListener("scroll", function(){
         }     
     }
 })
+})
+
+
 
