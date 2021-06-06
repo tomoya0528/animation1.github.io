@@ -39,6 +39,18 @@ document.addEventListener('scroll',function(){
         getBoundingClientRect().top + target[i].clientHeight * 0.6
         if(window.innerHeight > distance){
             target[i].classList.add('show');
+        }else{
+            target[i].classList.remove('show');
+        }
+}})
+document.addEventListener('scroll',function(){
+    for(let i = 0;i <target.length; i++){
+        const distance = target[i].
+        getBoundingClientRect().bottom + target[i].clientHeight * 0.6
+        if(window.innerHeight < distance){
+            target[i].classList.add('show');
+        }else{
+            target[i].classList.remove('show');
         }
 }})
 
@@ -149,7 +161,38 @@ window.addEventListener("scroll", function(){
         getBoundingClientRect().top + showElements[i].clientHeight * 0.6
         if(window.innerHeight > distance){
             showElements[i].classList.add('show');
-        }     
+        }
+    }
+})
+window.addEventListener("scroll", function(){
+    for (let i = 0; i < showElements.length; i++){
+        const distance = showElements[i].
+        getBoundingClientRect().bottom + showElements[i].clientHeight * 2.0
+        if(window.innerHeight < distance){
+            showElements[i].classList.add('show');
+        }
+    }
+})
+window.addEventListener("scroll", function(){
+    for (let i = 0; i < showElements.length; i++){
+        const distance = showElements[i].
+        getBoundingClientRect().top + showElements[i].clientHeight * 1.5
+        if(window.innerHeight >= distance){
+            showElements[i].classList.add('opacity');
+        }else{
+            showElements[i].classList.remove('opacity');
+        }
+    }
+})
+window.addEventListener("scroll", function(){
+    for (let i = 0; i < showElements.length; i++){
+        const distance = showElements[i].
+        getBoundingClientRect().bottom + showElements[i].clientHeight * 1.5
+        if(window.innerHeight <= distance){
+            showElements[i].classList.add('opacity');
+        }else{
+            showElements[i].classList.remove('opacity');
+        }
     }
 })
 const work = document.querySelectorAll(".work-slide");
@@ -159,6 +202,18 @@ window.addEventListener("scroll", function(){
         getBoundingClientRect().top + work[i].clientHeight * 0.6
         if(window.innerHeight > distance02){
             work[i].classList.add('active');
+        }else{
+            work[i].classList.remove('active');
+        }     
+    }
+})
+window.addEventListener("scroll", function(){
+    for (let i = 0; i < work.length; i++){
+        const distance02 = work[i].
+        getBoundingClientRect().bottom + work[i].clientHeight * 0.6
+        if(window.innerHeight < distance02){
+            work[i].classList.add('active');
+        }else{
         }     
     }
 })
