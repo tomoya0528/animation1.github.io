@@ -13,6 +13,9 @@ a{
 a:not(.menu-tag){
     color: white;
 }
+.opacity{
+    opacity: 1;
+}
 .loading{
     position: fixed;
     top: 0;
@@ -427,6 +430,10 @@ main .contents li.show img{
     width: 200px;
     height: 40px;
     margin-bottom: 100px;
+    opacity: 0.5;
+}
+.button.opacity{
+    opacity: 1;
 }
 .button > a{
     width: 100%;
@@ -446,6 +453,10 @@ main .contents li.show img{
     margin-left: auto;
     cursor: pointer;
     transition: 0.2s;
+    opacity: 0.5;
+}
+.picture.opacity{
+    opacity: 1;
 }
 .picture:hover{
     opacity: .5;
@@ -576,7 +587,6 @@ main .contents li.show img{
     height: 100%;
     background-color: rgb(0, 255, 255);
     transform: translateX(-100%);
-
 }
 .work-slide::after{
     content: '';
