@@ -167,15 +167,6 @@ window.addEventListener("scroll", function(){
 window.addEventListener("scroll", function(){
     for (let i = 0; i < showElements.length; i++){
         const distance = showElements[i].
-        getBoundingClientRect().bottom + showElements[i].clientHeight * 2.0
-        if(window.innerHeight < distance){
-            showElements[i].classList.add('show');
-        }
-    }
-})
-window.addEventListener("scroll", function(){
-    for (let i = 0; i < showElements.length; i++){
-        const distance = showElements[i].
         getBoundingClientRect().top + showElements[i].clientHeight * 1.5
         if(window.innerHeight >= distance){
             showElements[i].classList.add('opacity');
