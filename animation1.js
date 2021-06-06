@@ -28,6 +28,7 @@ document.getElementById("menuButton").addEventListener("click", function(){
         // hov[i].classList.add('active');
         hov[i].classList.toggle("active");
     }
+    
 })
 
     const target = document.querySelectorAll('.animationTarget');
@@ -148,6 +149,16 @@ window.addEventListener("scroll", function(){
         getBoundingClientRect().top + showElements[i].clientHeight * 0.6
         if(window.innerHeight > distance){
             showElements[i].classList.add('show');
+        }     
+    }
+})
+const work = document.querySelectorAll(".work-slide");
+window.addEventListener("scroll", function(){
+    for (let i = 0; i < work.length; i++){
+        const distance02 = work[i].
+        getBoundingClientRect().top + work[i].clientHeight * 0.6
+        if(window.innerHeight > distance02){
+            work[i].classList.add('active');
         }     
     }
 })
