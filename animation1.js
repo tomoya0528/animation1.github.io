@@ -19,10 +19,15 @@
     
 
     // 後に実行したい処理…メインのwebページのアニメーションの為の処理を入れる
+    const hov = document.querySelectorAll(".hov");
 document.addEventListener('DOMContentLoaded',function(){
 document.getElementById("menuButton").addEventListener("click", function(){
     this.classList.toggle("active");
     document.getElementById("menu02").classList.toggle("active");
+    for (let i = 0; i < hov.length; i++){
+        // hov[i].classList.add('active');
+        hov[i].classList.toggle("active");
+    }
 })
 
     const target = document.querySelectorAll('.animationTarget');
